@@ -59,8 +59,10 @@ def compare(catBreed, dogBreed):
     cat = np.max(catBreed)
     print(dog, unique_list[np.argmax(dogBreed)])
     print(cat, BREEDS[np.argmax(catBreed)])
-
-    if dog > cat:
+    
+    if dog < 0.2 and cat < 0.2:
+          return "Cant detect this pet"
+    elif dog > cat:
         return unique_list[np.argmax(dogBreed)] + ' dog'
     elif cat > dog:
         return BREEDS[np.argmax(catBreed)] + ' Cat'
